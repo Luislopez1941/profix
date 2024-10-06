@@ -13,6 +13,7 @@ interface Item {
     fullname: string;
     skills: Skill[];
     starts: number[]; // Asegúrate de que esto sea el tipo correcto
+    // name: string; // Elimina esta línea si no es necesaria
 }
 
 const Main = () => {
@@ -93,7 +94,7 @@ const Main = () => {
 
                     <div className="step">
                         <div className="icon">
-                            🧹
+                        
                         </div>
                         <div className="content">
                             <h3>Búsqueda simple</h3>
@@ -103,7 +104,7 @@ const Main = () => {
 
                     <div className="step">
                         <div className="icon">
-                            🛠️
+                            
                         </div>
                         <div className="content">
                             <h3>Selección simple</h3>
@@ -113,7 +114,7 @@ const Main = () => {
 
                     <div className="step">
                         <div className="icon">
-                            💳
+                           
                         </div>
                         <div className="content">
                             <h3>Pago fácil</h3>
