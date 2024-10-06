@@ -1,13 +1,13 @@
 .Plomero {
     padding: 5px;
-    background-color: #f5d062;
+    background-color: #709ED0;
     color: #fff;
     border-radius: 5px;
 }
 
 .Electricista {
     padding: 5px;
-    background-color: #709ed0;
+    background-color: #3F7DC0;
     color: #fff;
     border-radius: 5px;
 }
@@ -29,7 +29,7 @@
 
 .main > .row__one > .title > p {
     padding: 5px 10px;
-    background-color: #f5d8c8;
+    background-color: var(--secondary-color);
     border-radius: 5px;
     margin-bottom: 20px;
     color: var(--text-color);
@@ -44,7 +44,6 @@
 }
 
 .main > .row__one > .best__services > .item {
-    height: 400px;
     
     border-radius: 15px;
     background-color: #fff;
@@ -53,7 +52,7 @@
 }
 
 .main > .row__one > .best__services .content__data {
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     
 }
 
@@ -61,6 +60,31 @@
     width: 24px;
 }
 
+.name {
+    font-weight: 600;
+}
+
+.number__experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+    background-color: #3F7DC0;
+    color: #fff;
+    margin-right: 10px;
+    
+}
+
+.experience {
+    display: flex;
+    margin: 10px 0;
+}
+
+.starts {
+    margin: 20px 0;
+}
 
 
 .main > .row__one > .best__services .content__data > p {
@@ -76,16 +100,15 @@
 
 .main > .row__one > .best__services .btn {
     display: flex;
-    justify-content: center;
 }
 
 .main > .row__one > .best__services .btn > button {
-    padding: 7px 10px;
-    width: 90%;
+    padding: 10px;
+    width: 100%;
     border: none;
-    background-color: #709ed0;
+    background-color: var(--primary-color);
     color: #fff;
-    border-radius: 3px;
+    border-radius: 7px;
     cursor: pointer;
 }
 
@@ -98,7 +121,7 @@
 }
 
 .icon-tabler-star {
-    color: #f5d062;
+    color: #FFC107;
 }
 
 
@@ -124,6 +147,10 @@
     border-radius: 10px 0 0 10px;
 }
 
+.main > .row__two > div > .left > p {
+    display: none;
+}
+
 .main > .row__two > div > .right {
     padding: 20px;
     color: #fff;
@@ -135,12 +162,11 @@
 }
 
 
-.main > .row__three > div {
-    height: 300px;
+.main > .row__three > .how-it-works {
     display: grid;
-    grid-template-columns: 50% 50%;
-    background-color: #fff;
-    box-shadow: 0px 0px 71px -22px rgba(0,0,0,0.1);
+    grid-template-columns: repeat(3, 1fr);
+    /* background-color: #fff;
+    box-shadow: 0px 0px 71px -22px rgba(0,0,0,0.1); */
     border-radius: 10px;
     margin: 50px 0;
 }
@@ -167,7 +193,7 @@
 
 .main > .row__four > div > .right {
 
-    background-color: #709ed0;
+    background-color: var(--primary-color);
     border-radius: 10px;
     color: #fff;
     padding: 10px;
@@ -195,9 +221,50 @@
 
     .main > .row__one > .best__services > .item {
         width: 90vw;
-        height: 390px;
+
+    }
+
+
+    .main > .row__two > div {
+        height: 300px;
+        grid-template-columns: 100%;
+
     }
     
+    .main > .row__two > div > .left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background-image: linear-gradient(rgba(0, 0, 0, 0.315), rgba(0, 0, 0, 0.336)), url('../../assets/general/pexels-maltelu-2244746.jpg');
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        color: #fff;
+    }
+    
+    .main > .row__two > div > .left > p {
+        display: flex;
+        width: 90%;
+    }
+    
+
+    
+    .main > .row__two > div > .right {
+        padding: 20px;
+        color: #fff;
+        display: none;
+    }
+    
+
+    .main > .row__three > .how-it-works {
+        display: grid;
+        grid-template-columns: 100%;
+        /* background-color: #fff;
+        box-shadow: 0px 0px 71px -22px rgba(0,0,0,0.1); */
+        border-radius: 10px;
+        margin: 50px 0;
+    }
     
     
 }

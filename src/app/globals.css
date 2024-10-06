@@ -8,7 +8,8 @@
 
   --background-select-content: #fff;
   --background-hover-select: #709ed0;
-  --primary-color: #709ed0;
+  --primary-color: #3F7DC0;
+  --secondary-color: #F2A541;
 
   --text-color-black: rgb(64, 65, 69);
 }
@@ -35,37 +36,40 @@ body {
 @font-face {
   font-family: 'Poppins';
   src: url('./fonts/Poppins/Poppins-Light.ttf') format('truetype');
-
+  font-weight: 300; /* Light */
 }
 
 @font-face {
   font-family: 'Poppins';
   src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-
+  font-weight: 400; /* Regular */
 }
 
 @font-face {
   font-family: 'Poppins';
   src: url('./fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+}
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* Medium */
+}
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
 }
 
 
 
-
-@media (prefers-color-scheme: dark) {
-  html {
-    /* color-scheme: dark; */
-    background-color: var(--background);
-    font-family: 'Poppins', sans-serif; 
-    
-  }
+html {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Regular por defecto */
 }
-
-body {
-  font-family: 'Poppins', sans-serif; 
-}
-
 
 
 
@@ -209,7 +213,6 @@ background: var(--input-color);
 color: var(--text-select-color);
 border-radius: 5px 5px 5px 5px;
 justify-content: space-between;
-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 color: var(--placeholder-color);
  
 }
@@ -315,7 +318,7 @@ color: var(--text-color);
 .select__container .options li:hover, li.selected{
 border-radius: 5px;
 /* background: #f2f2f2; */
-background-color: var(--background-hover-select);
+background-color: var(--primary-color);
 color: #fff;
 }
 

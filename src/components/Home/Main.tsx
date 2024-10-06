@@ -36,12 +36,11 @@ const Main = () => {
                 <div className='best__services'>
                     {items.map((item: Item, index: number) => (
                         <div className='item' key={index}>
-                            <div 
-                                className='image__container' 
-                                style={{ backgroundImage: `url(${item.image})` }} 
-                            />
+                            <div className='image__container' style={{ backgroundImage: `url(${item.image})` }} />
                             <div className='content__data'>
-                                <p>{item.fullname}</p>
+                                <p className='name'>{item.fullname}</p>
+                                <p className="experience"><div className='number__experience'>7</div> años de experiencia</p>
+                                <p className="reviews">Megusta ofrecer servicos de calidad</p>
                                 <div className='skills'>
                                     {item.skills.map((skill: Skill, skillIndex: number) => (
                                         <p className={skill.name} key={skillIndex}>
@@ -49,15 +48,15 @@ const Main = () => {
                                         </p>
                                     ))}
                                 </div>
-                                <div>
+                                <div className='starts'>
                                     {item.starts.map((_, starIndex: number) => (
-                                        <svg 
-                                            key={starIndex} 
-                                            xmlns="http://www.w3.org/2000/svg" 
-                                            width="20" 
-                                            height="20" 
-                                            viewBox="0 0 24 24" 
-                                            fill="currentColor" 
+                                        <svg
+                                            key={starIndex}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
                                             className="icon icon-tabler icons-tabler-filled icon-tabler-star"
                                         >
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -65,18 +64,20 @@ const Main = () => {
                                         </svg>
                                     ))}
                                 </div>
-                       
+                                <div className='btn'>
+                                    <button>Ver perfil</button>
+                                </div>
                             </div>
-                            <div className='btn'>
-                                <button>Ver perfil</button>
-                            </div>
+
                         </div>
                     ))}
                 </div>
             </div>
             <div className='row__two'>
                 <div>
-                    <div className='left'></div>
+                    <div className='left'>
+                        <p>En nuestro sitio, te ofrecemos un mundo de posibilidades para todas tus necesidades.</p>
+                    </div>
                     <div className='right'>
                         <h2>¡Descubre la Excelencia en Servicios!</h2>
                         <p>En nuestro sitio, te ofrecemos un mundo de posibilidades para todas tus necesidades.</p>
@@ -88,9 +89,50 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-            <div className='row__three'>
-                <div></div>
+            <div className="row__three">
+                <div className="how-it-works">
+                    <h2>Cómo funciona</h2>
+
+                    <div className="step">
+                        <div className="icon">
+                  
+                            🧹
+                        </div>
+                        <div className="content">
+                            <h3>Búsqueda simple</h3>
+                            <p>Usa nuestra barra de búsqueda para encontrar el servicio doméstico que necesitas, o navega por nuestras categorías.</p>
+                        </div>
+                    </div>
+
+                    <div className="step">
+                        <div className="icon">
+                        
+                            🛠️
+                        </div>
+                        <div className="content">
+                            <h3>Selección simple</h3>
+                            <p>Elige el servicio adecuado basándote en calificaciones, nivel de experiencia y comentarios, o usa filtros como "Freelancer que hable español".</p>
+                        </div>
+                    </div>
+
+                    <div className="step">
+                        <div className="icon">
+                        
+                            💳
+                        </div>
+                        <div className="content">
+                            <h3>Pago fácil</h3>
+                            <p>Contrata a tu profesional de confianza de manera fácil y segura. Pagos protegidos, comunicación directa y servicios puntuales.</p>
+                        </div>
+                    </div>
+
+                    <div className="faq">
+                        <h3>¿Tienes alguna pregunta?</h3>
+                        <p><a href="#">Encuentra más información aquí</a></p>
+                    </div>
+                </div>
             </div>
+
         </div>
     );
 }
