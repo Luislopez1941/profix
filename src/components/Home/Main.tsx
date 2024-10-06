@@ -13,7 +13,6 @@ interface Item {
     fullname: string;
     skills: Skill[];
     starts: number[]; // Asegúrate de que esto sea el tipo correcto
-    // name: string; // Elimina esta línea si no es necesaria
 }
 
 const Main = () => {
