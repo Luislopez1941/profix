@@ -1,0 +1,99 @@
+.join {
+    background-color: #fff;
+    height: 100vh;
+}
+
+.join__container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100%;
+}
+
+.join__container .left {
+    padding: 20px;
+}
+
+.join__container .left > div {
+    background-color: var(--primary-color);
+    height: 100%;
+    border-radius: 20px;
+}
+
+
+.join__container .right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.form__join {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.form__join > .titles .title__main {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+
+
+.form__join > .titles .title__warning {
+    display: flex;
+    margin-top: 10px;
+    
+}
+
+.form__join > .titles .title__warning > p {
+    padding: 10px;
+    background-color: #709ed042;
+    border-radius: 3px;
+    color: #4a7eb4;
+    
+}
+
+
+.form__join > .form__join_container {
+    padding: 30px 0;
+    border-radius: 10px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.form__join > .btn {
+    width: 100%;
+}
+
+.form__join > .btn .btn__create {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    padding: 8px 10px;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.logins {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 25px auto 0 auto;
+}
+
+.logins > div {
+    display: flex;
+    background-color: #709ed023;
+    padding: 10px;
+    color: #2b2b2b;
+    border-radius: 5px;
+}
+
+.logins > div > svg {
+    margin-right: 10px;
+}
+
+

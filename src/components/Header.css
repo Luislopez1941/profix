@@ -1,0 +1,62 @@
+.hero {
+    height: 80px;
+    width: 100%;
+    background-color: #709ed0;
+}
+
+
+.hero__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.nav__hero {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.hero__container .title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+
+.nav__hero .btn__seller > .btn__join {
+    background-color: #acbedd;
+    color: #fff;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+
+}
+
+.login__hero {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.nav__hero .icon__user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50px;
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+}
+
+.login__hero .text__login {
+    color: #fff;
+}
