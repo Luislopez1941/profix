@@ -88,43 +88,43 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-            <div className="row__three">
-                <div className="how-it-works">
+            <div className='row__three'>
+                <div className='how-it-works'>
                     <h2>Cómo funciona</h2>
 
-                    <div className="step">
-                        <div className="icon">
-                        
+                    <div className='step'>
+                        <div className='icon'>
+                            🧹
                         </div>
-                        <div className="content">
+                        <div className='content'>
                             <h3>Búsqueda simple</h3>
                             <p>Usa nuestra barra de búsqueda para encontrar el servicio doméstico que necesitas, o navega por nuestras categorías.</p>
                         </div>
                     </div>
 
-                    <div className="step">
-                        <div className="icon">
-                            
+                    <div className='step'>
+                        <div className='icon'>
+                            🛠️
                         </div>
-                        <div className="content">
+                        <div className='content'>
                             <h3>Selección simple</h3>
-                            <p>Elige el servicio adecuado basándote en calificaciones, nivel de experiencia y comentarios, o usa filtros como "Freelancer que hable español".</p>
+                            <p>Elige el servicio adecuado basándote en calificaciones, nivel de experiencia y comentarios, o usa filtros como 'Freelancer que hable español'.</p>
                         </div>
                     </div>
 
-                    <div className="step">
-                        <div className="icon">
-                           
+                    <div className='step'>
+                        <div className='icon'>
+                            💳
                         </div>
-                        <div className="content">
+                        <div className='content'>
                             <h3>Pago fácil</h3>
                             <p>Contrata a tu profesional de confianza de manera fácil y segura. Pagos protegidos, comunicación directa y servicios puntuales.</p>
                         </div>
                     </div>
 
-                    <div className="faq">
+                    <div className='faq'>
                         <h3>¿Tienes alguna pregunta?</h3>
-                        <p><a href="#">Encuentra más información aquí</a></p>
+                        <p><a href='#'>Encuentra más información aquí</a></p>
                     </div>
                 </div>
             </div>
