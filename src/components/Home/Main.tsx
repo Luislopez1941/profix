@@ -39,8 +39,8 @@ const Main = () => {
                             <div className='image__container' style={{ backgroundImage: `url(${item.image})` }} />
                             <div className='content__data'>
                                 <p className='name'>{item.fullname}</p>
-                                <p className="experience"><div className='number__experience'>7</div> años de experiencia</p>
-                                <p className="reviews">Megusta ofrecer servicos de calidad</p>
+                                <div className="experience"><p className='number__experience'>7</p> años de experiencia</div>
+                                <p className="reviews">Me gusta ofrecer servicios de calidad</p>
                                 <div className='skills'>
                                     {item.skills.map((skill: Skill, skillIndex: number) => (
                                         <p className={skill.name} key={skillIndex}>
@@ -68,7 +68,6 @@ const Main = () => {
                                     <button>Ver perfil</button>
                                 </div>
                             </div>
-
                         </div>
                     ))}
                 </div>
@@ -83,7 +82,7 @@ const Main = () => {
                         <p>En nuestro sitio, te ofrecemos un mundo de posibilidades para todas tus necesidades.</p>
                         <div>
                             Desde plomería hasta electricidad, puedes encontrar una amplia gama de profesionales listos para ayudarte.
-                            Lo mejor de todo: cada servicio que ofrecemos es **100% seguro** y **confiable**.
+                            Lo mejor de todo: cada servicio que ofrecemos es <strong>100% seguro</strong> y <strong>confiable</strong>.
                             ¡Tu satisfacción es nuestra prioridad!
                         </div>
                     </div>
@@ -95,7 +94,6 @@ const Main = () => {
 
                     <div className="step">
                         <div className="icon">
-                  
                             🧹
                         </div>
                         <div className="content">
@@ -106,7 +104,6 @@ const Main = () => {
 
                     <div className="step">
                         <div className="icon">
-                        
                             🛠️
                         </div>
                         <div className="content">
@@ -117,7 +114,6 @@ const Main = () => {
 
                     <div className="step">
                         <div className="icon">
-                        
                             💳
                         </div>
                         <div className="content">
@@ -132,7 +128,6 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }
