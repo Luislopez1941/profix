@@ -27,11 +27,16 @@
 }
 
 .layout__container .text__search > .warning {
-    display: flex;
+
 }
 
+.layout__container .text__search > .warning p > svg {
+    width: 24px;
+}
 .layout__container .text__search > .warning > p {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
     padding: 10px;
     border-radius: 5px;
     background-color: #acbedd;
@@ -95,20 +100,16 @@
     .layout {
         height: 100vh;
         display: flex;
-        align-items: center;
+        align-items: start;
         justify-content: center;
     
     }
 
-    .layout__container .text__search > div > .text__main {
-        font-size: 2.5rem;
-        font-weight: 800;
-    }
-
-    .layout__container .text__search > div >  .text__two > p {
-        margin-left: 0;
+    .layout__container .text__search div:first-child {
+        display: none;
     }
     
+
 
     .layout__container .text__search > .warning {
         margin: 40px 0;

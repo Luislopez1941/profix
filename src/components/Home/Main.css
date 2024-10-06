@@ -40,11 +40,12 @@
 .main > .row__one > .best__services {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 20px;
+    gap: 20px;
 }
 
 .main > .row__one > .best__services > .item {
     height: 400px;
+    
     border-radius: 15px;
     background-color: #fff;
     box-shadow: 0px 0px 71px -22px rgba(0,0,0,0.1);
@@ -53,6 +54,7 @@
 
 .main > .row__one > .best__services .content__data {
     padding: 10px;
+    
 }
 
 .content__data img {
@@ -172,3 +174,30 @@
 }
 
 
+@media screen and (max-width: 768px) {
+
+    .main > .row__four > div > .left {
+        display: none;
+    }
+
+    .main > .row__four > div {
+        grid-template-columns: 100%;
+     }
+
+     .main > .row__one > .best__services {
+        display: flex;
+        /* overflow-x: auto; */
+    }
+    .main > .row__one > .best__services .content__data {
+        width: 400px;
+        
+    }
+
+    .main > .row__one > .best__services > .item {
+        width: 90vw;
+        height: 390px;
+    }
+    
+    
+    
+}

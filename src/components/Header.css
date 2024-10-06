@@ -17,8 +17,11 @@
 .nav__hero {
     display: flex;
     align-items: center;
-    width: 300px;
     justify-content: space-between;
+}
+
+.btn__seller {
+    margin-right: 40px;
 }
 
 .hero__container .title {
@@ -60,3 +63,16 @@
 .login__hero .text__login {
     color: #fff;
 }
+
+
+@media screen and (max-width: 768px) {
+
+   
+.btn__seller {
+    margin-right: 20px;
+}
+
+    
+}
+
+
