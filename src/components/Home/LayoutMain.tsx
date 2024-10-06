@@ -1,61 +1,64 @@
 "use client";
 
-import React, { useState } from 'react'
-import './LayoutMain.css'
+import React, { useState } from 'react';
+import './LayoutMain.css';
 import Link from 'next/link';
 
+interface State {
+    id: number;
+    name: string;
+}
+
+interface City {
+    id: number;
+    name: string;
+}
+
 const LayoutMain = () => {
+    const [selectState, setSelectState] = useState<boolean>(false);
+    const [selectedState, setSelectedState] = useState<number | null>(null); // Specify the type
 
-    const [selectState, setSelectState] = useState<boolean>(false)
-    const [selectedState, setSelectedState] = useState<any>(null)
-
-    const state = [
+    const state: State[] = [
         {
             id: 1,
             name: 'Quintana Roo',
-        }
+        },
+    ];
 
-    ]
-
-    const citys = [
+    const citys: City[] = [
         {
             id: 1,
             name: 'Cancun',
-        }
-
-    ]
+        },
+    ];
 
     const openSelectStore = () => {
-        setSelectState(!selectState)
-    }
+        setSelectState(!selectState);
+    };
 
-    const handleCompaniesChange = (state: any) => {
-        setSelectedState(state.id)
-        setSelectState(false)
-    }
+    const handleCompaniesChange = (state: State) => { // Specify the type
+        setSelectedState(state.id);
+        setSelectState(false);
+    };
 
-    const [selectCity, setSelectCity] = useState<boolean>(false)
-    const [selectedCity, setSelectedCity] = useState<any>(null)
+    const [selectCity, setSelectCity] = useState<boolean>(false);
+    const [selectedCity, setSelectedCity] = useState<number | null>(null); // Specify the type
 
     const openSelectCity = () => {
-        setSelectCity(!selectCity)
-    }
+        setSelectCity(!selectCity);
+    };
 
-    const handleCityChange = (city: any) => {
-        setSelectedCity(city.id)
-        setSelectCity(false)
-    }
-
-
+    const handleCityChange = (city: City) => { // Specify the type
+        setSelectedCity(city.id);
+        setSelectCity(false);
+    };
 
     return (
         <div className='layout'>
             <div className='layout__container'>
                 <div className='text__search'>
                     <div>
-                        <p className='text__main'>
-                            Donde buscar un servicio es
-                        </p>
+                        <p className='text__main'>Donde buscar un servicio es</p>
                         <div className='text__two'>
                             <p>Fácil y Seguro</p>
                         </div>
@@ -77,13 +80,13 @@ const LayoutMain = () => {
                         <div className='select__container'>
                             <label className='label__general'>Estado</label>
                             <div className='select-btn__general'>
-                                <div className={`select-btn ${selectState ? 'active' : ''}`} onClick={openSelectStore} >
-                                    <p>{selectedState ? state.find((s: { id: number }) => s.id === selectedState)?.name : 'Selecciona'}</p>
+                                <div className={`select-btn ${selectState ? 'active' : ''}`} onClick={openSelectStore}>
+                                    <p>{selectedState ? state.find((s) => s.id === selectedState)?.name : 'Selecciona'}</p>
                                     <svg className='chevron__down' fill='#6c6c6e' xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
                                 </div>
-                                <div className={`content ${selectState ? 'active' : ''}`} >
+                                <div className={`content ${selectState ? 'active' : ''}`}>
                                     <ul className={`options ${selectState ? 'active' : ''}`} style={{ opacity: selectState ? '1' : '0' }}>
-                                        {state?.map((state: any) => (
+                                        {state?.map((state) => (
                                             <li key={state.id} onClick={() => handleCompaniesChange(state)}>
                                                 {state.name}
                                             </li>
@@ -95,13 +98,13 @@ const LayoutMain = () => {
                         <div className='select__container'>
                             <label className='label__general'>Ciudad</label>
                             <div className='select-btn__general'>
-                                <div className={`select-btn ${selectCity ? 'active' : ''}`} onClick={openSelectCity} >
-                                    <p>{selectedCity ? citys.find((s: { id: number }) => s.id === selectedCity)?.name : 'Selecciona'}</p>
+                                <div className={`select-btn ${selectCity ? 'active' : ''}`} onClick={openSelectCity}>
+                                    <p>{selectedCity ? citys.find((s) => s.id === selectedCity)?.name : 'Selecciona'}</p>
                                     <svg className='chevron__down' fill='#6c6c6e' xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
                                 </div>
-                                <div className={`content ${selectCity ? 'active' : ''}`} >
+                                <div className={`content ${selectCity ? 'active' : ''}`}>
                                     <ul className={`options ${selectCity ? 'active' : ''}`} style={{ opacity: selectCity ? '1' : '0' }}>
-                                        {citys?.map((city: any) => (
+                                        {citys?.map((city) => (
                                             <li key={city.id} onClick={() => handleCityChange(city)}>
                                                 {city.name}
                                             </li>
@@ -117,7 +120,7 @@ const LayoutMain = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default LayoutMain
+export default LayoutMain;

@@ -2,7 +2,7 @@ import React from 'react'
 import './page.css'
 import Link from 'next/link'
 
-const page = () => {
+const Page = () => {
   return (
     <div className='success'>
       <div className='success__container'>
@@ -24,4 +24,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

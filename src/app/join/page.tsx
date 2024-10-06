@@ -2,7 +2,7 @@ import React from 'react'
 import './page.css'
 import Link from 'next/link'
 
-const Join = () => {
+const Page = () => {
   return (
     <div className='join'>
       <div className='join__container'>
@@ -64,4 +64,4 @@ const Join = () => {
   )
 }
 
-export default Join
+export default Page

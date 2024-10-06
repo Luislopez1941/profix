@@ -9,8 +9,8 @@ import { useStore } from 'zustand'
 
 
 
-const page = () => {
-    const {formStatus}: any = useStore(storeLogin)
+const Page = () => {
+    const {formStatus} = useStore(storeLogin)
 
     return (
         <div className='login'>
@@ -45,4 +45,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

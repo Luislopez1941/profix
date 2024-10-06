@@ -1,7 +1,7 @@
 import React from 'react'
 import './page.css'
 
-const page = () => {
+const Page = () => {
   return (
     <div className='workers'>
       <header className='hero'>
@@ -41,4 +41,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
