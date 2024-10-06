@@ -13,7 +13,7 @@
     padding: 20px;
 }
 
-.join__container .left > div {
+.join__container .left>div {
     background-color: var(--primary-color);
     height: 100%;
     border-radius: 20px;
@@ -31,29 +31,29 @@
     margin: 0 auto;
 }
 
-.form__join > .titles .title__main {
+.form__join>.titles .title__main {
     font-size: 2rem;
     font-weight: 700;
 }
 
 
 
-.form__join > .titles .title__warning {
+.form__join>.titles .title__warning {
     display: flex;
     margin-top: 10px;
-    
+
 }
 
-.form__join > .titles .title__warning > p {
+.form__join>.titles .title__warning>p {
     padding: 10px;
     background-color: #709ed042;
     border-radius: 3px;
     color: #4a7eb4;
-    
+
 }
 
 
-.form__join > .form__join_container {
+.form__join>.form__join_container {
     padding: 30px 0;
     border-radius: 10px;
     display: grid;
@@ -62,11 +62,11 @@
 }
 
 
-.form__join > .btn {
+.form__join>.btn {
     width: 100%;
 }
 
-.form__join > .btn .btn__create {
+.form__join>.btn .btn__create {
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
@@ -84,7 +84,7 @@
     margin: 25px auto 0 auto;
 }
 
-.logins > div {
+.logins>div {
     display: flex;
     background-color: #709ed023;
     padding: 10px;
@@ -92,8 +92,30 @@
     border-radius: 5px;
 }
 
-.logins > div > svg {
+.logins>div>svg {
     margin-right: 10px;
 }
 
 
+@media screen and (max-width: 768px) {
+
+
+    .join__container {
+        display: grid;
+        grid-template-columns: 100%;
+        height: 100%;
+    }
+
+    .join__container .left {
+        display: none;
+    }
+
+    .form__join>.form__join_container {
+        padding: 30px 0;
+        border-radius: 10px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+    
+}

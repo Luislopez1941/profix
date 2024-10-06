@@ -18,12 +18,13 @@
 }
 
 .main > .row__one {
-    width: 90%;
-    margin: 0 auto;
+
 }
 
 .main > .row__one > .title {
     display: flex;
+    width: 90%;
+    margin: 0 auto;
 }
 
 
@@ -37,23 +38,28 @@
 }
 
 
-.main > .row__one > .best__services {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.main > .row__one > .best__services > .item {
+.main > .row__one > .slider-container .item {
     
-    border-radius: 15px;
-    background-color: #fff;
-    box-shadow: 0px 0px 71px -22px rgba(0,0,0,0.1);
+  
    
 }
 
-.main > .row__one > .best__services .content__data {
-    padding: 10px 10px 20px 10px;
+.slider-container .slick-track .slick-slide  {
     
+    
+}
+
+.slider-container .slick-track .slick-slide > div  {
+    margin: 5px 20px;
+    border-radius: 15px;
+}
+
+.main > .row__one > .slider-container .content__data {
+    padding: 10px 10px 20px 10px;    
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--primary-color) !important;
 }
 
 .content__data img {
@@ -87,22 +93,22 @@
 }
 
 
-.main > .row__one > .best__services .content__data > p {
+.main > .row__one > .slider-container .content__data > p {
     
 }
 
-.main > .row__one > .best__services .content__data > .skills {
+.main > .row__one > .slider-container .content__data > .skills {
     display: flex;
     justify-content: space-between;
     column-gap: 10px;
     margin: 15px 0;
 }
 
-.main > .row__one > .best__services .btn {
+.main > .row__one > .slider-container .btn {
     display: flex;
 }
 
-.main > .row__one > .best__services .btn > button {
+.main > .row__one > .slider-container .btn > button {
     padding: 10px;
     width: 100%;
     border: none;
@@ -113,7 +119,7 @@
 }
 
 
-.main > .row__one > .best__services > .item > .image__container {
+.main > .row__one > .slider-container  .item > .image__container {
     background-position: top;
     background-size: cover;
     height: 200px;
@@ -199,6 +205,54 @@
     padding: 10px;
 }
 
+.how-it-works {
+    text-align: center;
+}
+
+.how-it-works > div {
+    margin: 20px 0;
+}
+
+.how-it-works > .title {
+    margin-bottom: 20px;
+}
+
+.how-it-works > .title > h2 {
+    padding: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 500;
+    
+   
+}
+
+.how-it-works > .step {
+    margin: 15px 0;
+}
+
+.how-it-works > .step .content > h3 {
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+
+.how-it-works > .step .icon {
+    display: flex;
+    justify-content: center;
+}
+
+.how-it-works > .step .icon > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: var(--primary-color);
+    height: 50px;
+    width: 50px;
+    color: #fff;
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -210,17 +264,10 @@
         grid-template-columns: 100%;
      }
 
-     .main > .row__one > .best__services {
-        display: flex;
-        /* overflow-x: auto; */
-    }
-    .main > .row__one > .best__services .content__data {
-        width: 400px;
-        
-    }
+    
 
     .main > .row__one > .best__services > .item {
-        width: 90vw;
+
 
     }
 
