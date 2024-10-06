@@ -166,14 +166,29 @@ option {
 
 }
 
+.inputs__general_icons svg  {
+  color: var(--placeholder-color);
+}
+
 .inputs__general:hover {
   outline: 2px solid var(--primary-color);
- 
+  border-radius: 3px;
 }
 
 
 .inputs__general:focus {
   outline: 2px solid var(--primary-color);
+  border-radius: 3px;
+}
+
+.inputs__general_icons:hover  {
+  outline: 2px solid var(--primary-color);
+  border-radius: 3px;
+}
+
+.inputs__general_icons:hover svg  {
+  color: var(--primary-color);
+
 }
 
 
@@ -356,16 +371,16 @@ color: #fff;
   /* Inputs general */
   
   .inputs__general {
-    padding: 15px 0;
+    padding: 13px 0;
 
   }
   
   .inputs__general_icons {
-    padding: 15px;
+    padding: 13px;
   }
 
   .select__container .select-btn {
-    height: 55px;
+    height: 50px;
 
     }
 

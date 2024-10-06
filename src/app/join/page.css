@@ -44,7 +44,7 @@
 
 }
 
-.form__join>.titles .title__warning>p {
+.form__join>.titles .title__warning > p {
     padding: 10px;
     background-color: #709ed042;
     border-radius: 3px;
@@ -84,7 +84,7 @@
     margin: 25px auto 0 auto;
 }
 
-.logins>div {
+.logins > div {
     display: flex;
     background-color: #709ed023;
     padding: 10px;
@@ -92,9 +92,7 @@
     border-radius: 5px;
 }
 
-.logins>div>svg {
-    margin-right: 10px;
-}
+
 
 
 @media screen and (max-width: 768px) {

@@ -8,7 +8,7 @@ const FormLogin = () => {
     return (
         <form className='form__login'>
             <div className='titles'>
-                <h2 className='title__main'>Inicia sesión y accede a los mejores profesionales</h2>
+                <div className='title__main'><b>Accede a los mejores</b> <b className='profesional'>profesionales</b></div>
                 <div className='title__warning'>
                     <p>Ingresa para encontrar expertos confiables que llevarán tus proyectos al siguiente nivel.</p>
                 </div>
