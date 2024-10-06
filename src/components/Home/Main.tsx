@@ -19,7 +19,8 @@ interface Item {
     starts: number[]; // Asegúrate de que esto sea el tipo correcto
     // name: string; // Elimina esta línea si no es necesaria
 }
-let settings = {
+
+const settings = {
     dots: true,
     infinite: false,
     speed: 500,
