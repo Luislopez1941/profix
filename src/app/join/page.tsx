@@ -1,6 +1,5 @@
 import React from 'react'
 import './page.css'
-import Header from '@/components/Header'
 import Link from 'next/link'
 
 const Join = () => {
