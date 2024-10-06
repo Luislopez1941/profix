@@ -29,6 +29,7 @@ const Main = () => {
                     </div>
                 </div>
             </div>
+            
             <div className='row__one'>
                 <div className='title'>
                     <p>Los trabajadores con mejores calificaciones</p>
@@ -39,8 +40,8 @@ const Main = () => {
                             <div className='image__container' style={{ backgroundImage: `url(${item.image})` }} />
                             <div className='content__data'>
                                 <p className='name'>{item.fullname}</p>
-                                <div className="experience"><p className='number__experience'>7</p> años de experiencia</div>
-                                <p className="reviews">Me gusta ofrecer servicios de calidad</p>
+                                <div className='experience'><p className='number__experience'>7</p> años de experiencia</div>
+                                <p className='reviews'>Me gusta ofrecer servicios de calidad</p>
                                 <div className='skills'>
                                     {item.skills.map((skill: Skill, skillIndex: number) => (
                                         <p className={skill.name} key={skillIndex}>
