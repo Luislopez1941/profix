@@ -30,7 +30,6 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-
             <div className='row__one'>
                 <div className='title'>
                     <p>Los trabajadores con mejores calificaciones</p>
@@ -111,7 +110,7 @@ const Main = () => {
                         </div>
                         <div className='content'>
                             <h3>Selección simple</h3>
-                            <p>Elige el servicio adecuado basándote en calificaciones, nivel de experiencia y comentarios, o usa filtros como 'Freelancer que hable español'.</p>
+                            <p>Elige el servicio adecuado basándote en calificaciones, nivel de experiencia y comentarios, o usa filtros como Freelancer que hable español.</p>
                         </div>
                     </div>
 
