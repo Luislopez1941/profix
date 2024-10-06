@@ -15,7 +15,6 @@ const Main = () => {
                     </div>
                     <div className='right'>
                         Una buenas calificacion habla de un buen servicio
-
                     </div>
                 </div>
             </div>
