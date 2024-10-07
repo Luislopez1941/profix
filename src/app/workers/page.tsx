@@ -1,5 +1,9 @@
-import React from 'react'
+
+'use client'
+
+import React, { useState } from 'react'
 import './page.css'
+import '../../components/Header.css'
 import itemServi from '../../components/Home/json/items.json'
 import Link from 'next/link';
 
@@ -16,15 +20,40 @@ interface Item {
 }
 
 const Page = () => {
+
+
+  const [toggle, setToggle] = useState<boolean>(false)
+
   return (
     <div className='workers'>
       <header className='hero'>
-        <div className='hero__container'>
-          <div className='inputs__general_icons'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-            <input className='inputs__generic' type="text" placeholder='Buscar ' />
+        <div className='row__one'>
+          <div className='toggle' onClick={() => setToggle(!toggle)}>
+            <button className={`toggle__botton ${toggle ? 'activo' : ''}`}>
+              <span className="l1 span"></span>
+              <span className="l2 span"></span>
+              <span className="l3 span"></span>
+            </button>
           </div>
           <div>
+            <p className='profix'>ProFix</p>
+          </div>
+          <div>
+            <Link href='/login' className='login__hero'>
+              <p className='text__login'>Iniciar sesión</p>
+              <div className='icon__user'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#fff" className="icon icon-tabler icons-tabler-filled icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg>
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div className='row__two'>
+          <div className='inputs__general_icons'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+            <input className='inputs__generic' type="text" placeholder='Buscar servicios'/>
+          </div>
+          <div className='filter'>
+            <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-adjustments-horizontal"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 6l8 0" /><path d="M16 6l4 0" /><path d="M8 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 12l2 0" /><path d="M10 12l10 0" /><path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 18l11 0" /><path d="M19 18l1 0" /></svg>
           </div>
         </div>
       </header>

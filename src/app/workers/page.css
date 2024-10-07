@@ -1,3 +1,58 @@
+.workers .hero {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    height: auto;
+}
+
+.workers .hero > .row__one {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.workers .hero > .row__one .login__hero .icon__user {
+    height: 20px;
+}
+
+
+.workers .hero > .row__two {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.workers .hero > .row__two .inputs__general_icons {
+    outline: 1.5px solid var(--placeholder-color);
+}
+
+.workers .hero > .row__two .inputs__general_icons:hover {
+    outline: none;
+}
+
+.workers .hero > .row__two .inputs__general_icons:hover svg {
+    color: var(--placeholder-color);
+}
+
+.workers .hero > .row__two .inputs__general_icons:focus svg {
+    color: var(--placeholder-color);
+}
+
+
+.workers .hero > .row__two .filter {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workers .hero > .row__two .filter > svg {
+    color: var(--primary-color);
+    width: 35px;
+    height: 35px;
+}
+
+
+
 .hero__container {
     width: 90%;
     margin: 0 auto;
