@@ -99,8 +99,37 @@
 }
 
 .workers > .main__workers > .row__three .item {
-    background-color: var(--primary-color);
+    width: 100%;
     border-radius: 10px;
+}
+
+.workers > .main__workers > .row__three .item .content__data {
+
+}
+
+.workers > .main__workers > .row__three .item .content__data {
+
+}
+
+.workers > .main__workers > .row__three .item .content__data .skills {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.workers > .main__workers > .row__three .item .content__data .starts {
+    color: #FFC107;
+}
+
+.workers > .main__workers > .row__three .item .content__data .btn > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
 }
 
 .workers > .main__workers > .row__three .item > .image__container {
