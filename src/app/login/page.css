@@ -73,6 +73,12 @@
         margin: 25px auto 0 auto;
     }
 
+    .login__container .right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
 
     .logins > div > p {
         display: none;
