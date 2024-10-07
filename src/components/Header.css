@@ -31,7 +31,7 @@
 }
 
 
-.nav__hero .btn__seller > .btn__join {
+.nav__hero .btn__seller>.btn__join {
     background-color: #3f7dc046;
     border: none;
     color: #3F7DC0;
@@ -57,7 +57,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
- 
+
     border-radius: 50px;
     /* height: 25px;
     width: 25px; */
@@ -69,14 +69,94 @@
 }
 
 
+
+/*================Nav Modal=====================*/
+
+.toggle {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    /* centra los elementos */
+    width: 40px;
+    height: 40px;
+}
+
+.toggle__botton {
+    width: 40px;
+    height: 40px;
+    transform: scale(.8);
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+
+}
+
+.span {
+    background: var(--primary-color);
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s, width 0.3s;
+}
+
+.l1 {
+    transform: translate(-50%, -15px);
+}
+
+.l3 {
+    transform: translate(-50%, 10px);
+}
+
+/* PARTE DE JAVASCRIPT */
+.activo .l1 {
+    transform: translate(-50%, -50%)rotate(45deg);
+}
+
+.activo .l3 {
+    transform: translate(-50%, -50%)rotate(-45deg);
+}
+
+.activo .l2 {
+    width: 0;
+}
+
+
 @media screen and (max-width: 768px) {
 
-   
-.btn__seller {
-    margin-right: 20px;
+    .hero__container .title {
+        display: none;
+    }
+
+    .toggle {
+        display: block;
+    }
+
+    .text__login {
+        display: none;
+    }
+
+    .btn__seller {
+        margin-right: 20px;
+    }
+
+    .nav__hero .icon__user {
+
+        margin-left: 0;
+    }
+
+    .login__hero {
+        padding: 8px;
+        border-radius: 50px;
+
+
+    }
+
+
 }
-
-    
-}
-
-
