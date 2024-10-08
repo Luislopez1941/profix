@@ -1,7 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import Image from 'next/image'
-import userImg from '../../assets/img/user.jpeg'
+import userImg from '../../assets/general/plomero.jpg'
 import img1 from '../../assets/img/img_1.avif'
 import img2 from '../../assets/img/img_2.avif'
 import img3 from '../../assets/img/img_3.avif'
@@ -20,14 +20,25 @@ const Profile = () => {
           
             <span></span>
           </div>
-          <h2>Anna Smith</h2>
-          <p>UX/UI Designer</p>
+          <h2>Juan Jose Hernandez Guzman</h2>
+          <div>
+            <p>Plomero</p>
+            <p>Electicista</p>
+          </div>
           <p>anna@example.com</p>
-
+          <div>
+            <button>Contratar</button>
+          </div>
           <ul className="about">
-            <li><span>4,073</span>Followers</li>
-            <li><span>322</span>Following</li>
-            <li><span>200,543</span>Attraction</li>
+            <li>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  className="icon icon-tabler icons-tabler-filled icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" /></svg>
+              Calificaciones
+              </li>
+            <li>Trabajos</li>
+            <li>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  className="icon icon-tabler icons-tabler-filled icon-tabler-message"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 3a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-4.724l-4.762 2.857a1 1 0 0 1 -1.508 -.743l-.006 -.114v-2h-1a4 4 0 0 1 -3.995 -3.8l-.005 -.2v-8a4 4 0 0 1 4 -4zm-4 9h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0 -2m2 -4h-8a1 1 0 1 0 0 2h8a1 1 0 0 0 0 -2" /></svg>
+              Enviar mensaje
+              </li>
           </ul>
 
           <div className="content">
@@ -48,10 +59,8 @@ const Profile = () => {
         <div className="right__col">
           <nav>
             <ul>
-              <li><a href="">photos</a></li>
-              <li><a href="">galleries</a></li>
-              <li><a href="">groups</a></li>
-              <li><a href="">about</a></li>
+              <li><a href="">Trabajos</a></li>
+              <li><a href="">Fotos</a></li>
             </ul>
             <button>Follow</button>
           </nav>

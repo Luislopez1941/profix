@@ -14,13 +14,53 @@
     margin: 0 auto;
 }
 
+.sidebar__profile {
+    display: none;
+    
+}
+
+.sidebar__profile .image__profile-sidebar > .image__container-sidebar {
+    background-position: center;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background-image: url('../assets/general/plomero.jpg');
+}
+
+.sidebar__profile .sidebar__profile-name {
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.sidebar__profile .sidebar__profile-label {
+    display: flex;
+}
+
+
 
 .nav__hero {
     display: flex;
     align-items: center;
+   
     justify-content: space-between;
     width: 400px;
 }
+
+.nav__hero > .nav__hero_container .nav__items .nav__link  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    font-weight: 500px;
+}
+
+.nav__hero > .nav__hero_container .nav__items .nav__link svg  {
+    margin-right: 10px;
+}
+
+
 
 .nav__account {
     display: flex;
@@ -138,11 +178,28 @@
     width: 0;
 }
 
+.sidebar__end {
+
+}
+
+.sidebar__end .sidebar__end_container {
+    
+}
+
+.sidebar__end .sidebar__end_container > p {
+    font-weight: 600;
+}
+
+
 
 @media screen and (max-width: 768px) {
 
     .hero__container .title {
         display: none;
+    }
+    
+    .sidebar__profile {
+        display: flex;
     }
 
     .toggle {
@@ -160,22 +217,16 @@
         left: 0;
         transition: clip-path 0.3s ease;
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        z-index: 1;
     }
 
-    .nav__hero > .nav__hero_container .nav__items  {
+    .nav__hero > .nav__hero_container  {
         display: block;
-        margin-top: 100px;
-        padding: 50px;
+        margin-top: 50px;
+        padding: 20px;
     }
 
-    .nav__hero > .nav__hero_container .nav__items .nav__link  {
-        padding: 10px;
-        border-radius: 5px;
-        margin: 20px 0;
-        background-color: #3F7DC0;
-        color: #fff;
-    }
-    
+
     
     
     .nav__hero.activo {
