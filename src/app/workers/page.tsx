@@ -26,7 +26,7 @@ interface Item {
 const Page = () => {
 
   const pages = [1, 2, 3, 4]
-  let active = 1
+  const active = 1
 
   const [toggle, setToggle] = useState<boolean>(false)
 
