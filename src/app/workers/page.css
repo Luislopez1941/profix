@@ -1,7 +1,7 @@
 .profix {
     font-weight: 700;
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .workers .hero {
@@ -26,6 +26,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     margin: 20px 0;
+    place-items: center;
 }
 
 .workers .hero > .row__two .inputs__general_icons {
@@ -33,7 +34,10 @@
 }
 
 .workers .hero > .row__two .inputs__general_icons {
-   
+   display: flex;
+   align-items: center;
+   height: 40px;
+   padding: 0 13px;
 }
 
 .workers .hero > .row__two .inputs__general_icons:hover {
@@ -94,21 +98,15 @@
     gap: 20px;
     margin: 20px 0;
     overflow: auto;
-    &::-webkit-scrollbar {
-        width: 0px;
-        height: 0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: transparent; 
-        border-radius: 5px;
-        height: 100px;
-    }
-
-    &::-webkit-scrollbar-track {
-    /* Para modificar el background */
-    }
+    -webkit-overflow-scrolling: touch; /* mejora el comportamiento del scroll en dispositivos táctiles de Apple */
+    scrollbar-width: none; /* Para ocultar en Firefox */
 }
+
+/* Para Safari y navegadores WebKit */
+.workers > .main__workers > .row__one::-webkit-scrollbar {
+    display: none; /* Oculta el scrollbar en Safari */
+}
+
 
 .workers > .main__workers > .row__one > .item {
     display: flex;
