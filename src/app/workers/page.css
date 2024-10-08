@@ -1,5 +1,5 @@
 .profix {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primary-color);
     font-size: 1.2rem;
 }
@@ -100,7 +100,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: var(--primary-color); 
+        background-color: transparent; 
         border-radius: 5px;
         height: 100px;
     }
@@ -184,7 +184,7 @@
     place-items: center;
     background-color: #f2f2f2;
     color: #666666;
-    width: 40px;
+    width: 45px;
     height: 40px;
     border-radius: 5px;
 }
@@ -194,15 +194,19 @@
     place-items: center;
     background-color: #f2f2f2;
     color: #666666;
-    width: 40px;
+    width: 45px;
     height: 40px;
     border-radius: 5px;
 }
 
+.row__pages {
+    margin: 40px 0;
+}
 
 .row__pages_container {
     display: flex;
     gap: 20px;
+  
 }
 
 
@@ -211,9 +215,15 @@
     place-items: center;
     background-color: #f2f2f2;
     color: #666666;
-    width: 40px;
+    width: 45px;
     height: 40px;
     border-radius: 5px;
+}
+
+.row__pages_container > .active {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
 }
 
 
