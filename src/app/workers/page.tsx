@@ -6,6 +6,7 @@ import './page.css'
 import '../../components/Header.css'
 import itemServi from '../../components/Home/json/items.json'
 import Link from 'next/link';
+import Footer from '@/components/Footer'
 
 interface Skill {
   name: string;
@@ -19,8 +20,10 @@ interface Item {
   // name: string; // Elimina esta línea si no es necesaria
 }
 
+
 const Page = () => {
 
+  const pages = [1, 2, 3, 4, 5]
 
   const [toggle, setToggle] = useState<boolean>(false)
 
@@ -34,6 +37,16 @@ const Page = () => {
               <span className="l2 span"></span>
               <span className="l3 span"></span>
             </button>
+          </div>
+          <div className={`nav__hero ${toggle ? 'activo' : ''}`}>
+            <div className='nav__hero_container'>
+              <ul className='nav__items'>
+                <li className='nav__item'><Link className='nav__link' href='/login'>Unete</Link></li>
+                <li className='nav__item'><Link className='nav__link' href='/login'>Explora</Link></li>
+                <li className='nav__item'><Link className='nav__link' href='/login'>Sobre nosotros</Link></li>
+                <li className='nav__item'><Link className='nav__link' href='/login'>Contacto</Link></li>
+              </ul>
+            </div>
           </div>
           <div>
             <p className='profix'>ProFix</p>
@@ -50,10 +63,10 @@ const Page = () => {
         <div className='row__two'>
           <div className='inputs__general_icons'>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-            <input className='inputs__generic' type="text" placeholder='Buscar servicios'/>
+            <input className='inputs__generic' type="text" placeholder='Buscar servicios' />
           </div>
           <div className='filter'>
-            <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-adjustments-horizontal"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 6l8 0" /><path d="M16 6l4 0" /><path d="M8 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 12l2 0" /><path d="M10 12l10 0" /><path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 18l11 0" /><path d="M19 18l1 0" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-adjustments-horizontal"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 6l8 0" /><path d="M16 6l4 0" /><path d="M8 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 12l2 0" /><path d="M10 12l10 0" /><path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M4 18l11 0" /><path d="M19 18l1 0" /></svg>
           </div>
         </div>
       </header>
@@ -76,7 +89,6 @@ const Page = () => {
           </div>
         </div>
         <div className='row__three'>
-
           {itemServi.map((item: Item, index: number) => (
             <div className='item' key={index}>
               <div className='image__container' style={{ backgroundImage: `url(${item.image})` }} />
@@ -113,10 +125,22 @@ const Page = () => {
               </div>
             </div>
           ))}
-
-
+        </div>
+        <div className='row__pages'>
+          <div className='chevron-left'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 6l-6 6l6 6" /></svg>
+          </div>
+          <div className='row__pages_container'>
+            {pages.map((x: number) => (
+              <div>{x}</div>
+            ))}
+          </div>
+          <div className='chevron-right'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 6l6 6l-6 6" /></svg>
+          </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }

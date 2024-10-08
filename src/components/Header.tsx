@@ -21,7 +21,17 @@ const Header = () => {
         <div>
           <h2 className='title'>ProFix</h2>
         </div>
-        <div className='nav__hero'>
+        <div className={`nav__hero ${toggle ? 'activo' : ''}`}>
+          <div className='nav__hero_container'>
+            <ul className='nav__items'>
+              <li className='nav__item'><Link className='nav__link' href='/login'>Unete</Link></li>
+              <li className='nav__item'><Link className='nav__link' href='/login'>Explora</Link></li>
+              <li className='nav__item'><Link className='nav__link' href='/login'>Sobre nosotros</Link></li>
+              <li className='nav__item'><Link className='nav__link' href='/login'>Contacto</Link></li>
+            </ul>
+          </div>
+        </div>
+        <div className='nav__account'>
           <div className='btn__seller'>
             <Link className='btn__join' href='/join'>
               Unirme
