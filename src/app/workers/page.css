@@ -83,6 +83,12 @@
     border: 1px solid var(--white-color-3)
 }
 
+.workers .hero__workers > .row__three .btn__filter > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .workers .hero__workers > .row__three .btn__filter > svg {
     margin-left: 10px;
 }

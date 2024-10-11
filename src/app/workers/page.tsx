@@ -6,7 +6,7 @@ import './page.css'
 import '../../components/Header.css'
 import itemServi from '../../components/Home/json/items.json'
 import Footer from '@/components/Footer'
-import {Wrench, Zap, Search, ChevronDown, Magnet } from 'lucide-react';
+import { Wrench, Zap, Search, ChevronDown, Magnet } from 'lucide-react';
 import Card from '@/components/Card'
 import Header from '@/components/Header'
 
@@ -36,18 +36,16 @@ const Page = () => {
         <div className='row__one'>
         </div>
         <div className='row__two'>
-         
-            <input className='inputs__general' type="text" placeholder='Buscar servicios' />
-     
+          <input className='inputs__general' type="text" placeholder='Buscar servicios' />
           <div className='search'>
             <Search style={{ width: '1rem', height: '1rem' }} />
           </div>
         </div>
         <div className='row__three'>
-          <button className='btn__filter'>
+          <div className='btn__filter'>
             <p>Filtro avanzado</p>
             <ChevronDown />
-          </button>
+          </div>
         </div>
       </header>
       <section className='main__workers'>
