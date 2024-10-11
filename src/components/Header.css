@@ -75,9 +75,10 @@
     color: var(--primary-color);
     font-weight: 600;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 7px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    margin-left: 10px;
   }
   
   .btn__join:hover {
@@ -88,20 +89,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color);
-    height: 40px;
-    padding: 0 16px;
-    border-radius: 20px;
+    border: 1px solid var(--white-color-3);
+    padding: 8px 16px;
+    border-radius: 7px;
     text-decoration: none;
     transition: background-color 0.3s ease;
   }
-  
-  .login__hero:hover {
-    background-color: var(--hover-color);
+
+    
+  .login__hero svg {
+    margin-right: 10px;
   }
   
+  /* .login__hero:hover {
+    background-color: var(--hover-color);
+  } */
+  
   .text__login {
-    color: #fff;
     margin-right: 8px;
   }
 
@@ -116,14 +120,14 @@
     justify-content: center;
     align-items: center;
     /* centra los elementos */
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     z-index: 1;
 }
 
 .toggle__botton {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     transform: scale(.8);
     position: relative;
     cursor: pointer;
@@ -259,12 +263,12 @@
       margin-right: 10px;
     }
 
-    .login__hero {
+    /* .login__hero {
         height: 40px;
         width: 40px;
         padding: 0;
 
-      }
+      } */
   
     .sidebar__end {
       margin-top: 20px;
@@ -276,17 +280,11 @@
       font-weight: 600;
     }
   
-    .text__login {
+    /* .text__login {
       display: none;
     }
+   */
   
-    .btn__seller {
-      margin-right: 20px;
-    }
-  
-    .nav__account .icon__user {
-      margin-left: 0;
-    }
   }
 
 

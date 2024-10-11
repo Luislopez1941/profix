@@ -55,7 +55,7 @@ export default function Footer() {
         <div className="border-t pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-3xl font-bold">ProFix</div>
-            <div className="flex justify-center  mb-4 md:mb-0 social-networks">
+            <div className="mb-4 md:mb-0 social-networks">
               <Link href="#" className="social-icon">
                 <span className="sr-only">Facebook</span>
                 <Facebook size={24} />
