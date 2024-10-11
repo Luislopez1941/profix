@@ -1,7 +1,7 @@
 
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import './page.css'
 import '../../components/Header.css'
 import itemServi from '../../components/Home/json/items.json'
