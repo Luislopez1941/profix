@@ -5,13 +5,12 @@
 }
 
 .main > .row__one {
-
+    width: 90%;
+    margin: 0 auto;
 }
 
 .main > .row__one > .title {
     display: flex;
-    width: 90%;
-    margin: 0 auto;
 }
 
 
@@ -21,7 +20,9 @@
     border-radius: 5px;
     margin-bottom: 20px;
     color: var(--text-color);
-    color: #fff
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 

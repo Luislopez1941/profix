@@ -18,9 +18,10 @@
     align-items: center;
     height: 100%;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
   }
+  
   
   .title {
     font-size: 1.5rem;
@@ -34,6 +35,7 @@
     align-items: center;
     justify-content: space-between;
     width: 400px;
+    display: none;
   }
   
   .nav__items {
@@ -89,16 +91,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--white-color-3);
+    border: 1.5px solid var(--primary-color);
     padding: 8px 16px;
     border-radius: 7px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    color: var(--primary-color);
+    font-weight: 600;
   }
 
     
   .login__hero svg {
     margin-right: 10px;
+    color: var(--primary-color) !important;
   }
   
   /* .login__hero:hover {

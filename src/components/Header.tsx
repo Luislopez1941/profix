@@ -75,7 +75,8 @@ const Header = () => {
         </div>
         <div className='nav__account'>
           <Link href='/login' className='login__hero'>
-            <User style={{ width: '1rem', height: '1rem', color: '#171717'}} />
+            <User strokeWidth={2.25} style={{ width: '1rem', height: '1rem', color: '#171717'}} />
+            
             <small className='text__login'>Iniciar sesión</small>
           </Link>
           <div className='btn__seller'>
