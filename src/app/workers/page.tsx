@@ -19,8 +19,7 @@ interface Item {
   image: string;
   fullname: string;
   skills: Skill[];
-  starts: number[]; // Asegúrate de que esto sea el tipo correcto
-  // name: string; // Elimina esta línea si no es necesaria
+  starts: number[];
 }
 
 
@@ -29,8 +28,6 @@ const Page = () => {
 
   const pages = [1, 2, 3, 4]
   const active = 1
-
-  const [toggle, setToggle] = useState<boolean>(false)
 
   return (
     <div className='workers'>
