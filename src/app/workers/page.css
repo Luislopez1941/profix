@@ -37,26 +37,25 @@
     place-items: center;
 }
 
-.workers .hero__workers > .row__two .inputs__general_icons {
+.workers .hero__workers > .row__two .inputs__general {
     margin: 0;
 }
 
-.workers .hero__workers > .row__two .inputs__general_icons {
+.workers .hero__workers > .row__two .inputs__general {
    display: flex;
    align-items: center;
    height: 40px;
-   padding: 0 13px;
 }
 
-.workers .hero__workers > .row__two .inputs__general_icons:hover {
+.workers .hero__workers > .row__two .inputs__general:hover {
     outline: none;
 }
 
-.workers .hero__workers > .row__two .inputs__general_icons:hover svg {
+.workers .hero__workers > .row__two .inputs__general:hover svg {
     color: var(--placeholder-color);
 }
 
-.workers .hero__workers > .row__two .inputs__general_icons:focus svg {
+.workers .hero__workers > .row__two .inputs__general:focus svg {
     color: var(--placeholder-color);
 }
 
@@ -255,6 +254,20 @@
 
 @media screen and (max-width: 768px) {
 
+    .workers .hero__workers > .row__two .inputs__general {
+        font-size: smaller;
+     }
+ 
+    .workers > .main__workers > .row__one > .item > p {
+        font-size: smaller;
+    }
+
+    
+    .workers .hero__workers > .row__three .btn__filter {
+        font-size: smaller;
+    }
+
+
     .workers > .main__workers > .row__three .item > .image__container {
         height: 300px;
     }
@@ -263,6 +276,9 @@
         display: grid;
         grid-template-columns: 100%;
     }
+
+    
+    
 
 }
 

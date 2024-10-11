@@ -6,7 +6,7 @@ import './page.css'
 import '../../components/Header.css'
 import itemServi from '../../components/Home/json/items.json'
 import Footer from '@/components/Footer'
-import {Wrench, Zap, Search, ChevronDown } from 'lucide-react';
+import {Wrench, Zap, Search, ChevronDown, Magnet } from 'lucide-react';
 import Card from '@/components/Card'
 import Header from '@/components/Header'
 
@@ -36,9 +36,9 @@ const Page = () => {
         <div className='row__one'>
         </div>
         <div className='row__two'>
-          <div className='inputs__general_icons'>
-            <input className='inputs__generic' type="text" placeholder='Buscar servicios' />
-          </div>
+         
+            <input className='inputs__general' type="text" placeholder='Buscar servicios' />
+     
           <div className='search'>
             <Search style={{ width: '1rem', height: '1rem' }} />
           </div>
@@ -61,7 +61,7 @@ const Page = () => {
             <p>Electricitas</p>
           </div>
           <div className='item'>
-
+            <Magnet style={{ width: '1rem', height: '1rem' }} />
             <p>Herrero</p>
           </div>
           <div className='item'>
