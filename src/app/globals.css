@@ -185,7 +185,7 @@ option {
 .inputs__general_icons svg  {
   color: var(--placeholder-color);
 }
-
+/* 
 .inputs__general:hover {
   outline: 2px solid var(--primary-color);
   border-radius: 3px;
@@ -205,7 +205,7 @@ option {
 .inputs__general_icons:hover svg  {
   color: var(--primary-color);
 
-}
+} */
 
 
 
@@ -419,16 +419,16 @@ color: #fff;
   /* Inputs general */
   
   .inputs__general {
-    padding: 13px 0;
+    padding: 12px 0;
 
   }
   
   .inputs__general_icons {
-    padding: 13px;
+    padding: 12px;
   }
 
   .select__container .select-btn {
-    height: 50px;
+    height: 47px;
 
     }
 

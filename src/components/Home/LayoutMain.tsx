@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './LayoutMain.css';
 import Link from 'next/link';
-import { Search } from 'lucide-react';
+import { Search, MapPin, Navigation } from 'lucide-react';
 
 interface State {
     id: number;
@@ -75,14 +75,14 @@ const LayoutMain = () => {
                     <div className='row__one'>
                         <div>
                             <div className='inputs__general_icons'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width={20} fill='currentColor' viewBox="0 0 448 512"><path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8l176 0 0 176c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z" /></svg>
+                            <Navigation strokeWidth={1.5} />
                                 <input className='inputs__generic' type="text" placeholder='Buscar tipo de servicio' />
                             </div>
                         </div>
                         <div className='select__container'>
                             <div className='select-btn__general'>
                                 <div className={`select-btn ${selectState ? 'active' : ''}`} onClick={openSelectStore}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width={15} fill='currentColor' viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" /></svg>
+                                <MapPin strokeWidth={1.5} />
                                     <div>
                                         <p>{selectedState ? state.find((s) => s.id === selectedState)?.name : 'Selecciona'}</p>
                                         <svg className='chevron__down' fill='#6c6c6e' xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>
@@ -102,7 +102,7 @@ const LayoutMain = () => {
                         <div className='select__container'>
                             <div className='select-btn__general'>
                                 <div className={`select-btn ${selectCity ? 'active' : ''}`} onClick={openSelectCity}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width={15} fill='currentColor' viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" /></svg>
+                                <MapPin strokeWidth={1.5} />
                                     <div>
                                         <p>{selectedCity ? citys.find((s) => s.id === selectedCity)?.name : 'Selecciona'}</p>
                                         <svg className='chevron__down' fill='#6c6c6e' xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" /></svg>

@@ -67,6 +67,7 @@
     padding: 30px 20px;
     border-radius: 10px;
     background-color: #fff;
+    border: 1px solid #e1e5ea;
     box-shadow: 0px 0px 52px 5px rgba(0,0,0,0.1);
 }
 
@@ -111,6 +112,26 @@
         align-items: start;
         justify-content: center;
     
+    }
+
+    .search .inputs__general_icons {
+        border-radius: 10px;
+        border: 1px solid #e1e5ea;
+        background-color: #fff;
+    }
+
+    .search .inputs__generic {
+        background-color: #fff;
+    }
+
+    .search .select-btn {
+        border: 1px solid #e1e5ea;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+
+    .search svg {
+        color: var(--primary-color) !important;
     }
 
     .layout__container .text__search > .warning > p {
