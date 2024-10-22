@@ -1,4 +1,3 @@
-// apiService.ts
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 
 class ApiService {
@@ -13,8 +12,8 @@ class ApiService {
     });
   }
 
-  private async request<T>(method: string, url: string, data?: any): Promise<T> {
-    const response: AxiosResponse<T> = await this.axiosInstance.request({
+  private async request(method: string, url: string, data?: any): Promise<any> {
+    const response: AxiosResponse<any> = await this.axiosInstance.request({
       method,
       url,
       data,
@@ -22,19 +21,19 @@ class ApiService {
     return response.data;
   }
 
-  public get<T>(path: string): Promise<T> {
+  public get(path: string): Promise<any> {
     const url = `/${path}`;
-    return this.request<T>('GET', url);
+    return this.request('GET', url);
   }
 
-  public post<T>(path: string, data: any): Promise<T> {
+  public post(path: string, data: any): Promise<any> {
     const url = `/${path}`;
-    return this.request<T>('POST', url, data);
+    return this.request('POST', url, data);
   }
   
-  public put<T>(path: string, data: any): Promise<T> {
+  public put(path: string, data: any): Promise<any> {
     const url = `/${path}`;
-    return this.request<T>('PUT', url, data);
+    return this.request('PUT', url, data);
   }
 }
 
