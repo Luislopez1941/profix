@@ -13,7 +13,7 @@
     padding: 20px;
 }
 
-.join__container .left>div {
+.join__container .left > div {
     background-color: var(--primary-color);
     height: 100%;
     border-radius: 20px;
@@ -61,20 +61,28 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+.form__join_container > .row__one {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
 
-.form__join>.btn {
+
+.form__join > .btn {
     width: 100%;
 }
 
-.form__join>.btn .btn__create {
+.form__join .btn .btn__create {
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
-    padding: 8px 10px;
+    padding: 10px 10px;
     width: 40%;
     margin: 0 auto;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 .logins {
@@ -93,12 +101,31 @@
 }
 
 
-
+.title_logo {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    text-align: center;
+}
 
 @media screen and (max-width: 768px) {
 
-    .form__join>.titles .title__warning {
-        display: none;
+    .join__container .right {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .form__join {
+        /* width: 100%; */
+        margin: 0 auto;
+    }
+    
+
+    .form__join  >.titles .title__warning > p {
+        /* display: none; */
+        background-color: transparent;
+        color: var(--black-color-5);
+        padding: 0;
     
     }
     
@@ -114,11 +141,73 @@
     }
 
     .form__join>.form__join_container {
-        padding: 30px 0;
+        padding: 0;
         border-radius: 10px;
         display: grid;
         gap: 20px;
-        grid-template-columns: repeat(2, 1fr);
+        margin: 20px 0;
+        grid-template-columns: 1fr;
     }
+
+    .form__join_container .inputs__general {
+        border: 1.5px solid #dee6ee;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .form__join > .form__join .btn {
+        width: 100%;
+    }
+
+    .form__join .btn .btn__create {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    
+
+    .form__join  >.titles .title__main {
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin-bottom: 30px;
+       
+    }
+
+    .logins > div > p {
+        display: none;
+    }
+
+    .logins {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logins > div {
+        margin: 0 10px;
+        background-color: transparent;
+    }
+
+    .h-line {
+        border-bottom: 1.5px solid #dee6ee;
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .h-line > div {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        top: -18px;
+        
+    }
+
+    .h-line > div > p {
+        background-color: #fff;
+        padding: 5px 10px;
+        
+    }
+    
     
 }

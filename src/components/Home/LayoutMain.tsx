@@ -60,9 +60,7 @@ const LayoutMain = () => {
                 <div className='text__search'>
                     <div>
                         <p className='text__main'>Donde buscar un servicio es Fácil y Seguro</p>
-                        {/* <div className='text__two'>
-                            <p>Fácil y Seguro</p>
-                        </div> */}
+        
                     </div>
                     <div className='warning'>
                         <p>

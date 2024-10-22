@@ -12,6 +12,11 @@ interface MainPageProps {
 }
 
 const MainPage: React.FC<MainPageProps> = ({ children }) => {
+
+    if (typeof window !== 'undefined') {
+        // Código del cliente
+      }
+      
     return (
         <div>
             <Header />

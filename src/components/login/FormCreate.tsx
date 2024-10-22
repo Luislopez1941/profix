@@ -1,53 +1,138 @@
 import React from 'react'
 import { storeLogin } from '@/zustand/Login'
 import './FormCreate.css'
+import APIs from '@/services/APIS'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
+interface FormValues {
+    firstName: string;
+    firstSurname: string;
+    phone: string;
+    email: string;
+    password: string;
+}
 
-const FormCreate = () => {
+const FormCreate: React.FC = () => {
     const setFormStatus = storeLogin(state => state.setFormStatus)
+
+    const formik = useFormik<FormValues>({
+        initialValues: {
+            firstName: '',
+            firstSurname: '',
+            phone: '',
+            email: '',
+            password: ''
+        },
+        validationSchema: Yup.object({
+            firstName: Yup.string().required('Requerido'),
+            firstSurname: Yup.string().required('Requerido'),
+            phone: Yup.string().required('Requerido'),
+            email: Yup.string().email('Correo electrónico inválido').required('Requerido'),
+            password: Yup.string().min(6, 'Debe tener al menos 6 caracteres').required('Requerido')
+        }),
+        onSubmit: async (values) => {
+            console.log('Formulario enviado:', values)
+            try {
+                await APIs.createUsers(values)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    })
+
     return (
-        <form className='form__login'>
+        <form className='form__login' onSubmit={formik.handleSubmit}>
             <div className='titles'>
-                <h2 className='title__main'>Únete y sé parte de este gran comienzo</h2>
+                <h2 className='title__main'>Crear cuenta</h2>
                 <div className='title__warning'>
                     <p>Inicia sesión para ser parte de nuestra comunidad de profesionales.</p>
                 </div>
             </div>
             <div className='form__login_create_container'>
-                <div>
-                    <label>Primer nombre</label>
-                    <input className='inputs__general' type="text" name="" placeholder='Primer nombre' />
+                <div className='row__one'>
+                    <div>
+                   
+                        <input
+                            className='inputs__general'
+                            type="text"
+                            name="firstName"
+                            placeholder='Primer nombre'
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.firstName}
+                        />
+                        {formik.touched.firstName && formik.errors.firstName ? (
+                            <div>{formik.errors.firstName}</div>
+                        ) : null}
+                    </div>
+                    <div>
+                 
+                        <input
+                            className='inputs__general'
+                            type="text"
+                            name="firstSurname"
+                            placeholder='Apellido paterno'
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.firstSurname}
+                        />
+                        {formik.touched.firstSurname && formik.errors.firstSurname ? (
+                            <div>{formik.errors.firstSurname}</div>
+                        ) : null}
+                    </div>
                 </div>
                 <div>
-                    <label>Primer segundo</label>
-                    <input className='inputs__general' type="text" name="" placeholder='Primer segundo' />
-                </div>
-                <div>
-                    <label>Apellido paterno</label>
-                    <input className='inputs__general' type="text" name="" placeholder='Apellido paterno' />
-                </div>
-                <div>
-                    <label>Apellido materno</label>
-                    <input className='inputs__general' type="text" name="" placeholder='Apellido materno' />
-                </div>
-                <div>
-                    <label>Numero telefonico</label>
-                    <input className='inputs__general' type="text" name="" placeholder='Numero telefonico' />
+                 
+                    <input
+                        className='inputs__general'
+                        type="text"
+                        name="phone"
+                        placeholder='Numero telefonico'
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.phone}
+                    />
+                    {formik.touched.phone && formik.errors.phone ? (
+                        <div>{formik.errors.phone}</div>
+                    ) : null}
                 </div>
                 <div className='email'>
-                    <label>Email</label>
-                    <input className='inputs__general' type="text" name="" placeholder='Numero telefonico' />
+                 
+                    <input
+                        className='inputs__general'
+                        type="text"
+                        name="email"
+                        placeholder='Correo electrónico'
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                    />
+                    {formik.touched.email && formik.errors.email ? (
+                        <div>{formik.errors.email}</div>
+                    ) : null}
                 </div>
                 <div className='password'>
-                    <label>Contraseña</label>
-                    <input className='inputs__general' type="text" name="" placeholder='Numero telefonico' />
+                   
+                    <input
+                        className='inputs__general'
+                        type="password"
+                        name="password"
+                        placeholder='Contraseña'
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.password}
+                    />
+                    {formik.touched.password && formik.errors.password ? (
+                        <div>{formik.errors.password}</div>
+                    ) : null}
                 </div>
             </div>
             <div className='btn'>
-                <button className='btn__create' onClick={() => setFormStatus(false)} >Craer cuenta</button>
+                <button className='btn__create' type="submit">Crear cuenta</button>
             </div>
             <div className='btn__change'>
-                <button className='btn' onClick={() => setFormStatus(false)} >Iniciar sesion</button>
+                <button className='btn' type="button" onClick={() => setFormStatus(false)}>Iniciar sesión</button>
             </div>
         </form>
     )

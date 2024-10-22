@@ -1,14 +1,53 @@
+
+
 import React from 'react'
 import Link from 'next/link'
 import './FormLogin.css'
 import { storeLogin } from '@/zustand/Login'
+import APIs from '@/services/APIS'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
-const FormLogin = () => {
+interface FormValues {
+    email: string;
+    password: string;
+}
+
+const FormLogin: React.FC = () => {
     const setFormStatus = storeLogin(state => state.setFormStatus)
+
+    const formik = useFormik<FormValues>({
+        initialValues: {
+            email: '',
+            password: ''
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().email('Correo electrónico inválido').required('Requerido'),
+            password: Yup.string().min(6, 'Debe tener al menos 6 caracteres').required('Requerido')
+        }),
+        validateOnChange: false,
+        validateOnBlur: false,
+        onSubmit: async (values, { setSubmitting, setErrors, validateForm }) => {
+            const errors = await validateForm();
+            if (Object.keys(errors).length === 0) {
+                try {
+                    await APIs.login(values)
+                } catch (error) {
+                    console.log(error)
+                } finally {
+                    setSubmitting(false)
+                }
+            } else {
+                setErrors(errors);
+                setSubmitting(false);
+            }
+        }
+    })
+
     return (
-        <form className='form__login'>
+        <form className='form__login' onSubmit={formik.handleSubmit}>
             <div className='titles'>
-                <div className='title__main'><b>Accede a los mejores</b> <b className='profesional'>profesionales</b></div>
+                <div className='title__main'>Iniciar sesión</div>
                 <div className='title__warning'>
                     <p>Ingresa para encontrar expertos confiables que llevarán tus proyectos al siguiente nivel.</p>
                 </div>
@@ -16,27 +55,43 @@ const FormLogin = () => {
 
             <div className='form__login_container'>
                 <div className='container__inputs'>
-                    <label>Email</label>
                     <div className='inputs__general_icons'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="icon icon-tabler icons-tabler-filled icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" /><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" /></svg>
-                        <input className='inputs__generic' type="text" name="" placeholder='Correo electronico' />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                        <input
+                            className='inputs__generic'
+                            type="text"
+                            name="email"
+                            placeholder='Correo electrónico'
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
+                        />
+                        {formik.errors.email ? (
+                            <div>{formik.errors.email}</div>
+                        ) : null}
                     </div>
                 </div>
                 <div className='container__inputs'>
-                    <label>Contraseña</label>
                     <div className='inputs__general_icons'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="icon icon-tabler icons-tabler-filled icon-tabler-key"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14.52 2c1.029 0 2.015 .409 2.742 1.136l3.602 3.602a3.877 3.877 0 0 1 0 5.483l-2.643 2.643a3.88 3.88 0 0 1 -4.941 .452l-.105 -.078l-5.882 5.883a3 3 0 0 1 -1.68 .843l-.22 .027l-.221 .009h-1.172c-1.014 0 -1.867 -.759 -1.991 -1.823l-.009 -.177v-1.172c0 -.704 .248 -1.386 .73 -1.96l.149 -.161l.414 -.414a1 1 0 0 1 .707 -.293h1v-1a1 1 0 0 1 .883 -.993l.117 -.007h1v-1a1 1 0 0 1 .206 -.608l.087 -.1l1.468 -1.469l-.076 -.103a3.9 3.9 0 0 1 -.678 -1.963l-.007 -.236c0 -1.029 .409 -2.015 1.136 -2.742l2.643 -2.643a3.88 3.88 0 0 1 2.741 -1.136m.495 5h-.02a2 2 0 1 0 0 4h.02a2 2 0 1 0 0 -4" /></svg>
-                        <input className='inputs__generic' type="text" name="" placeholder='Primer segundo' />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-key"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0z" /><path d="M15 9h.01" /></svg>
+                        <input
+                            className='inputs__generic'
+                            type="password"
+                            name="password"
+                            placeholder='Contraseña'
+                            onChange={formik.handleChange}
+                            value={formik.values.password}
+                        />
+                        {formik.errors.password ? (
+                            <div>{formik.errors.password}</div>
+                        ) : null}
                     </div>
-
                 </div>
-
             </div>
             <div className='btn'>
-                <Link className='btn__create' onClick={() => setFormStatus(false)} href='/'>Iniciar sesion</Link>
+                <button className='btn__create' onClick={() => setFormStatus(false)} >Iniciar sesion</button>
             </div>
             <div className='btn__change'>
-                <button className='btn' onClick={() => setFormStatus(true)}>Craer cuenta</button>
+                <button className='btn' onClick={() => setFormStatus(true)}>Crear cuenta</button>
             </div>
         </form>
     )

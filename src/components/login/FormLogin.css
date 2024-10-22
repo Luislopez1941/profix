@@ -27,10 +27,10 @@
     background-color: var(--primary-color);
     display: flex;
     justify-content: center;
-    padding: 8px 10px;
-    width: 40%;
+    padding: 10px;
+    width: 100%;
     margin: 0 auto;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -46,10 +46,10 @@
     display: flex;
     border: none;
     justify-content: center;
-    padding: 8px 10px;
-    width: 40%;
+    padding: 10px;
+    width: 100%;
     margin: 0 auto;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #fff;
     cursor: pointer;
 }
@@ -69,14 +69,24 @@
     
 }
 
+.form__login .inputs__general_icons {
+    background-color: #fff;
+    border: 1.5px solid #dee6ee;
+    border-radius: 10px;
+}
+
+.form__login .inputs__generic {
+    background-color: #fff;
+}
 
 
 
 @media screen and (max-width: 768px) {
 
-    .form__login > .titles .title__warning {
-        display: none;
-        
+    .form__login > .titles .title__warning > p {
+        background-color: transparent;
+        padding: 0;
+        color: var(--black-color-5);
     }
 
     .form__login .form__login_container {
