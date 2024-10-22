@@ -7,8 +7,8 @@ interface LoginData {
 
 interface UserData {
   firstName: string;
-  lastName: string;
-  phoneNumber: string;
+  firstSurname: string;
+  phone: string;
   email: string;
   password: string;
 }
