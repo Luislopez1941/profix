@@ -37,7 +37,7 @@ const Page: React.FC = () => {
             if (Object.keys(errors).length === 0) {
                 try {
                     console.log('Formulario enviado:', values)
-                    let result = await APIs.login(values)
+                    await APIs.login(values)
                     // Maneja el resultado de la API aquí
                 } catch (error) {
                     // Maneja los errores de la API aquí

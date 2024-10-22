@@ -1,7 +1,6 @@
 
 
 import React from 'react'
-import Link from 'next/link'
 import './FormLogin.css'
 import { storeLogin } from '@/zustand/Login'
 import APIs from '@/services/APIS'

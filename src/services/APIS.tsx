@@ -1,20 +1,28 @@
 import ConfigurationAPIs from '../services/ConfigApi';
 
-const APIs = {
-    login: async ( data: any) => {
-      const path = 'general_login';
-      return ConfigurationAPIs.post(path, data);
-    },
+interface LoginData {
+    email: string;
+    password: string;
+}
 
-    createUsers: async ( data: any) => {
-        const path = 'users_registration';
+interface UserData {
+  firstName: string;
+  firstSurname: string;
+  phone: string;
+  email: string;
+  password: string;
+}
+
+const APIs = {
+    login: async (data: LoginData) => {
+        const path = 'general_login';
         return ConfigurationAPIs.post(path, data);
     },
 
-
+    createUsers: async (data: UserData) => {
+        const path = 'users_registration';
+        return ConfigurationAPIs.post(path, data);
+    },
 }
 
 export default APIs;
-
-
-
