@@ -12,7 +12,13 @@ const Header = () => {
   const user = userState;
   const [toggle, setToggle] = useState<boolean>(false)
 
-  const state = true
+  let state: boolean = true
+
+  if(user.email) {
+    state = true
+  } else {
+    state = false
+  }
 
   return (
     <div className='hero'>
