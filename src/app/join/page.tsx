@@ -5,6 +5,8 @@ import './page.css'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import APIs from '@/services/APIS'
+import { useRouter } from 'next/navigation'
+
 
 interface FormValues {
     firstName: string;
@@ -15,6 +17,10 @@ interface FormValues {
 }
 
 const Page: React.FC = () => {
+    
+    const router = useRouter() // may be null or a NextRouter instance
+
+
     const formik = useFormik<FormValues>({
         initialValues: {
             firstName: '',
@@ -36,9 +42,8 @@ const Page: React.FC = () => {
             const errors = await validateForm();
             if (Object.keys(errors).length === 0) {
                 try {
-                    console.log('Formulario enviado:', values)
-                    await APIs.login(values)
-                    // Maneja el resultado de la API aquí
+                    router.push('/join/success');
+                    // await APIs.login(values)
                 } catch (error) {
                     // Maneja los errores de la API aquí
                     console.error('Error al enviar el formulario:', error)

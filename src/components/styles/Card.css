@@ -1,5 +1,7 @@
 .card {
     border-radius: 10px;
+    border: 1px solid #e1e5ea;
+    padding: 10px;
 }
 
 .card__container {
@@ -100,7 +102,7 @@
 }
 
 .card__content > .btn > a {
-    background-color: hsl(240, 5.9%, 10%);
+    background-color: var(--primary-color);
     color: var(--white-color);
     border-radius: 5px;
     width: 100%;

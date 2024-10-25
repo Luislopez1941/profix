@@ -4,9 +4,12 @@ import React, { useState } from 'react'
 import './Header.css'
 import Link from 'next/link';
 import { User } from 'lucide-react';
+import useUserStore from '@/zustand/UserStore';
+
 
 const Header = () => {
-
+  const userState = useUserStore(state => state.user);
+  let user = userState;
   const [toggle, setToggle] = useState<boolean>(false)
 
   return (
@@ -73,18 +76,26 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className='nav__account'>
-          <Link href='/login' className='login__hero'>
-            <User strokeWidth={2.25} style={{ width: '1rem', height: '1rem', color: '#171717'}} />
-            
-            <small className='text__login'>Iniciar sesión</small>
-          </Link>
-          <div className='btn__seller'>
-            <Link className='btn__join' href='/join'>
-              <small>Unirme</small>
+        {user.email ?
+          <div className='nav__account-login-true'>
+            <Link href='/user/profile' className='user'>
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="currentColor"  className="icon icon-tabler icons-tabler-filled icon-tabler-user"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" /></svg>
             </Link>
           </div>
-        </div>
+          :
+          <div className='nav__account-login-false'>
+            <Link href='/login' className='login__hero'>
+              <User strokeWidth={2.25} style={{ width: '1rem', height: '1rem', color: '#171717' }} />
+              <small className='text__login'>Iniciar sesión</small>
+            </Link>
+            <div className='btn__seller'>
+              <Link className='btn__join' href='/join'>
+                <small>Unirme</small>
+              </Link>
+            </div>
+          </div>
+        }
+
       </div>
     </div>
   )

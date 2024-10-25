@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from '../Card';
 import Slider from "react-slick";
+import { Search, Check, CreditCard } from 'lucide-react';
+
 
 interface Skill {
     name: string;
@@ -28,32 +30,32 @@ const settings = {
     slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
         }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
     ]
-  };
+};
 
 const Main = () => {
     return (
@@ -75,15 +77,15 @@ const Main = () => {
                 </div>
                 <div className="slider-container">
                     <Slider {...settings}>
-                    {items.map((item: Item, index: number) => (
-                        <div className='item' key={index}>
-                            <Card item={item} />
-                        </div>
-                    ))}
+                        {items.map((item: Item, index: number) => (
+                            <div className='item' key={index}>
+                                <Card item={item} />
+                            </div>
+                        ))}
                     </Slider>
                 </div>
                 <div className='best__services'>
-                    
+
                 </div>
             </div>
             <div className='row__two'>
@@ -104,46 +106,50 @@ const Main = () => {
                 </div>
             </div>
             <div className='row__three'>
-                <div className='how-it-works'>
-                    <div className='title'>
-                        <h2>Cómo funciona ProFix</h2>
-                    </div>
-
-                    <div className='step'>
-                        <div className='icon'>
-                            <div>
-                                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                <div className="how-it-works">
+                    <h2 className="title">Cómo funciona ProFix</h2>
+                    <div className="steps">
+                        <div className="step">
+                            <div className="icon search">
+                                <Search size={24} />
+                            </div>
+                            <div className="content">
+                                <h3>Búsqueda simple</h3>
+                                <p>Usa nuestra barra de búsqueda para encontrar el servicio doméstico que necesitas, o navega por nuestras categorías.</p>
                             </div>
                         </div>
-                        <div className='content'>
-                            <h3>Búsqueda simple</h3>
-                            <p>Usa nuestra barra de búsqueda para encontrar el servicio doméstico que necesitas, o navega por nuestras categorías.</p>
-                        </div>
-                    </div>
-
-                    <div className='step'>
-                        <div className='icon'>
-                            <div>
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        <div className="step">
+                            <div className="icon check">
+                                <Check size={24} />
+                            </div>
+                            <div className="content">
+                                <h3>Selección simple</h3>
+                                <p>Elige el servicio adecuado basándote en calificaciones, nivel de experiencia y comentarios.</p>
                             </div>
                         </div>
-                        <div className='content'>
-                            <h3>Selección simple</h3>
-                            <p>Elige el servicio adecuado basándote en calificaciones, nivel de experiencia y comentarios, o usa filtros como Freelancer que hable español.</p>
-                        </div>
-                    </div>
-
-                    <div className='step'>
-                        <div className='icon'>
-                            <div>
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-credit-card-pay"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 19h-6a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v4.5" /><path d="M3 10h18" /><path d="M16 19h6" /><path d="M19 16l3 3l-3 3" /><path d="M7.005 15h.005" /><path d="M11 15h2" /></svg>
+                        <div className="step">
+                            <div className="icon card">
+                                <CreditCard size={24} />
+                            </div>
+                            <div className="content">
+                                <h3>Pago fácil</h3>
+                                <p>Contrata a tu profesional de confianza de manera fácil y segura. Pagos protegidos, comunicación directa y servicios puntuales.</p>
                             </div>
                         </div>
-                        <div className='content'>
-                            <h3>Pago fácil</h3>
-                            <p>Contrata a tu profesional de confianza de manera fácil y segura. Pagos protegidos, comunicación directa y servicios puntuales.</p>
-                        </div>
                     </div>
+                </div>
+            </div>
+            <div className='row__five'>
+                <div className='additional__information'>
+                    <h2>Información Adicional</h2>
+                    <p>ProFix está comprometido a proporcionar servicios domésticos de alta calidad y confiables. Nuestro objetivo es hacer que tu vida sea más fácil y cómoda.</p>
+                    <ul>
+                        <li>Profesionales verificados y de confianza</li>
+                        <li>Servicios disponibles 24/7</li>
+                        <li>Garantía de satisfacción del cliente</li>
+                        <li>Precios transparentes y competitivos</li>
+                    </ul>
+                    <button className='learn-more'>Aprende más</button>
                 </div>
             </div>
         </div>

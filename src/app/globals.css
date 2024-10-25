@@ -137,6 +137,19 @@ option {
 }
 
 
+.btn__general-purple {
+  background-color: var(--primary-color);
+  padding: 10px 10px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius-general);
+  transition: all 400ms;
+  border-radius: 10px;
+
+}
+
+
 
 .label__general {
   font-weight: 500;

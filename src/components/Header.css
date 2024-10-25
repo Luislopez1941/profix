@@ -67,10 +67,32 @@
   }
   
   /* Account section styles */
-  .nav__account {
+  .nav__account-login-false {
     display: flex;
     align-items: center;
   }
+
+ 
+  .nav__account-login-true {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__account-login-true > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+  }
+   
+
+  .nav__account-login-true > a > svg {
+    color: #fff;
+  }
+    
   
   .btn__join {
     background-color: rgba(63, 125, 192, 0.1);
@@ -220,7 +242,7 @@
     }
   
     .nav__items {
-      flex-direction: column;
+      display: block;
     }
   
     .nav__item {

@@ -1,4 +1,4 @@
-
+'use client'
 
 import React from 'react'
 import './FormLogin.css'
@@ -6,6 +6,8 @@ import { storeLogin } from '@/zustand/Login'
 import APIs from '@/services/APIS'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios';
+import { useRouter } from 'next/navigation'
 
 interface FormValues {
     email: string;
@@ -14,6 +16,8 @@ interface FormValues {
 
 const FormLogin: React.FC = () => {
     const setFormStatus = storeLogin(state => state.setFormStatus)
+
+    const router = useRouter()
 
     const formik = useFormik<FormValues>({
         initialValues: {
@@ -30,7 +34,20 @@ const FormLogin: React.FC = () => {
             const errors = await validateForm();
             if (Object.keys(errors).length === 0) {
                 try {
-                    await APIs.login(values)
+                       
+  
+                    const response = await fetch('/api/', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(values),
+                    });
+
+                    // router.push('/')
+
+                    
+
                 } catch (error) {
                     console.log(error)
                 } finally {
@@ -42,6 +59,8 @@ const FormLogin: React.FC = () => {
             }
         }
     })
+
+    
 
     return (
         <form className='form__login' onSubmit={formik.handleSubmit}>

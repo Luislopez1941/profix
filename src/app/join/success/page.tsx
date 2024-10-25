@@ -7,17 +7,19 @@ const Page = () => {
     <div className='success'>
       <div className='success__container'>
         <div className='success__message'>
+          <div className='container-check'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l5 5l10 -10" /></svg>
+          </div>
           <h1>¡Registro Exitoso!</h1>
-          <p>Tu cuenta ha sido creada con éxito. Ahora puedes explorar nuestras opciones y empezar a disfrutar de nuestros servicios.</p>
           <p>Aquí tienes algunas sugerencias para empezar:</p>
           <ul>
             <li>Completa tu perfil para recibir recomendaciones personalizadas.</li>
-            <li>Explora nuestra sección de servicios destacados.</li>
-            <li>Lee las opiniones de otros usuarios sobre los profesionales disponibles.</li>
           </ul>
-          <Link className='btn-login' href='/login'>
-            Iniciar Sesión
-          </Link>
+          <button className='btn-login'>
+            <Link href='/login'>
+              Iniciar Sesión
+            </Link>
+          </button>
         </div>
       </div>
     </div>
