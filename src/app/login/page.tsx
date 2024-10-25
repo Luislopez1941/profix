@@ -2,10 +2,9 @@
 
 import React from 'react'
 import './page.css'
-import FormCreate from '@/components/login/FormCreate'
-import dynamic from 'next/dynamic';
-const FormLogin = dynamic(() => import('@/components/login/FormLogin'), { ssr: false });
-
+import dynamic from 'next/dynamic'
+const FormCreate = dynamic(() => import('@/components/login/FormCreate'), { ssr: false })
+const FormLogin = dynamic(() => import('@/components/login/FormLogin'), { ssr: false })
 import { storeLogin } from '@/zustand/Login'
 import { useStore } from 'zustand'
 
