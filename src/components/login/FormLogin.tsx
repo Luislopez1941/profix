@@ -3,11 +3,9 @@
 import React from 'react'
 import './FormLogin.css'
 import { storeLogin } from '@/zustand/Login'
-import APIs from '@/services/APIS'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import axios from 'axios';
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 
 interface FormValues {
     email: string;
@@ -17,7 +15,7 @@ interface FormValues {
 const FormLogin: React.FC = () => {
     const setFormStatus = storeLogin(state => state.setFormStatus)
 
-    const router = useRouter()
+    // const router = useRouter()
 
     const formik = useFormik<FormValues>({
         initialValues: {
@@ -36,7 +34,7 @@ const FormLogin: React.FC = () => {
                 try {
                        
   
-                    const response = await fetch('/api/', {
+                    await fetch('/api/', {
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',

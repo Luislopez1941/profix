@@ -9,7 +9,7 @@ import useUserStore from '@/zustand/UserStore';
 
 const Header = () => {
   const userState = useUserStore(state => state.user);
-  let user = userState;
+  const user = userState;
   const [toggle, setToggle] = useState<boolean>(false)
 
   return (

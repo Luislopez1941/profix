@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles/Card.css';
 import Link from 'next/link';
-import { Star } from 'lucide-react';
 
 // Define la interfaz para los elementos Skill
 interface Skill {

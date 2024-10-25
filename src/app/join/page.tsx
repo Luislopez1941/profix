@@ -4,7 +4,6 @@ import React from 'react'
 import './page.css'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import APIs from '@/services/APIS'
 import { useRouter } from 'next/navigation'
 
 
