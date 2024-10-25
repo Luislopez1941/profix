@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Header.css'
 import Link from 'next/link';
 import { User } from 'lucide-react';
@@ -12,13 +12,15 @@ const Header = () => {
   const user = userState;
   const [toggle, setToggle] = useState<boolean>(false)
 
-  let state: boolean = true
-
-  if(user.email) {
-    state = true
-  } else {
-    state = false
-  }
+  const [state, setState] = useState<boolean>(false)
+  
+  useEffect(() => {
+    if(user.email) {
+      setState(true)
+    } else {
+      setState(false)
+    }
+  }, [])
 
   return (
     <div className='hero'>
